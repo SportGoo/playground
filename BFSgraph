@@ -1,0 +1,31 @@
+function dfsIterative(vertex, graph, visited = new Set()) {
+  // Initialize a set for tracking visited vertices
+ 
+// Initialize a stack for tracking traversal
+
+  let stack = []
+  
+// Add the start vertex to visited
+  visited.add(vertex)
+  console.log(vertex)
+// Push the the start vertex to the stack
+  stack.push(vertex)
+// While the stack is not empty
+  while(stack.length > 0){
+    //   Pop  a vertex from the stack
+    let current = stack.pop()
+    console.log(current)
+
+    //   For each neighbor of the vertex
+    for( let neighbor of graph[current]){
+      //     If neighbor has not been visited
+      if(!visited.has(neighbor)){
+        //       Add neighbor to visited
+        visited.add(neighbor)
+           // Push neighbor to the stack
+        stack.push(neighbor)
+      }
+    }
+  }
+
+
